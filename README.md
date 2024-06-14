@@ -1,3 +1,6 @@
+<video width="100%" height="auto" controls>
+  <source src="Live demo recording.mp4" type="video/mp4">
+</video>
 # WebApp boilerplate with React JS and Flask API
 
 Build web applications using React.js for the front end and python/flask for your backend API.
