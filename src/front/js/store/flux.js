@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         actions: {
             newUser: async (email, password, location) => {
                 try {
-                    const resp = await fetch(process.env.BACKEND_URL + "/api/users", {
+                    const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/users", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ email, password, location }),
@@ -29,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             login: async(email, password) => {
                 try {
-                    const resp = await fetch(process.env.BACKEND_URL + "/api/users/login", {
+                    const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/users/login", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({email, password}),
@@ -77,7 +77,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         } else {
                             console.log("From actions.data: Starting API call for events");
                             try {
-                                const resp = await fetch(process.env.BACKEND_URL + "/api/events", {
+                                const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/events", {
                                     method: "GET",
                                     headers: {
                                         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                         } else {
                             console.log("From actions.data: Starting API call for favorites");
                             try {
-                                const resp = await fetch(process.env.BACKEND_URL + "/api/favorites", {
+                                const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/favorites", {
                                     method: "GET",
                                     headers: {
                                         "Content-Type": "application/json",
@@ -160,7 +160,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                                 }
                                 text.description = place === -1 ? text.description.slice(0, 250) : text.description.slice(0, place + 1);
                               }
-                            const resp = await fetch(process.env.BACKEND_URL + "/api/favorites", {
+                            const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/favorites", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -189,7 +189,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             
                     case "delete":
                         try {
-                            const resp = await fetch(`${process.env.BACKEND_URL}/api/favorites/${payload.id}`, {
+                            const resp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/favorites/${payload.id}`, {
                                 method: "DELETE",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -228,7 +228,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 console.log(`${location.location}`)
                 const store = getStore();
                 try {
-                    const resp = await fetch(`${process.env.BACKEND_URL}/api/user`, {
+                    const resp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -261,7 +261,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             forgotPassword: async (email) => {
                 try {
-                    const resp = await fetch(process.env.BACKEND_URL + "/api/forgot-password", {
+                    const resp = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/forgot-password", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ email }),

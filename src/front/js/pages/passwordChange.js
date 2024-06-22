@@ -25,7 +25,7 @@ export const PasswordChange = () => {
 		e.preventDefault();
 		if (newPassword === confirmPassword) {
 			try {
-				const resp = await fetch(`${process.env.BACKEND_URL}/api/reset-password`, {
+				const resp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/reset-password`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
