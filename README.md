@@ -1,6 +1,8 @@
 https://github.com/ErnestWarhead/My-Event-Finder-PinIT-/blob/main/Live%20demo%20recording.mp4  
 You may have to download the demo video to see it, it's only 21 MB
 
+Live website: https://my-event-finder-pinit-969b1d2cba03.herokuapp.com/
+
 PinIT
 
 Project Description
